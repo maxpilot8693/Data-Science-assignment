@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import joblib
 
-data = pd.read_csv('your_dataset.csv')
+data = pd.read_csv('accident_data.csv')
 
 X = data[['Weather', 'Road_Type', 'Speed_Limit']]
 y = data['Accident_Severity']
