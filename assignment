@@ -14,3 +14,10 @@ model = LinearRegression()
 model.fit(X_train, y_train)
 
 joblib.dump(model, 'accident_severity_model.pkl')
+
+loaded_model = joblib.load('accident_severity_model.pkl')
+
+new_data = pd.DataFrame({'Weather': ['Clear'], 'Road_Type': ['Urban'], 'Speed_Limit': [40]})
+predicted_severity = loaded_model.predict(new_data)
+
+print("Predicted Accident Severity:", predicted_severity[0])
